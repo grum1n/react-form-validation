@@ -7,16 +7,21 @@ const useForm = () => {
         password: '',
         password2: ''
     });
-    const [errors, setErorrs] useState({});
+    const [errors, setErorrs] = useState({});
 
     const handleChange = e => {
-        const { name, value } = e.target
+        const { name, value } = e.target;
         setValues({
             ...values,
             [name]: value
         });
     };
-    return {handleChange};
+
+    const handleSubmit = e => {
+        e.preventDefault();
+    }
+
+    return {handleChange, values, handleSubmit };
 };
 
 export default useForm;

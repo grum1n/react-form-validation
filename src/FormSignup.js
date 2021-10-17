@@ -1,6 +1,9 @@
 import React from 'react';
+import useForm from './useForm';
 
-function FormSignUp() {
+function FormSignup() {
+    const { handleChange, values } = useForm();
+
     return (
         <div>
             <div className="form-content-right">
@@ -16,6 +19,8 @@ function FormSignUp() {
                             name="username" 
                             className="form-input"
                             placeholder="Enter your username"
+                            value={values.username}
+                            onChange={handleChange}
                         />
                    </div>
                    <div className="form-inputs">
@@ -28,6 +33,8 @@ function FormSignUp() {
                             name="email" 
                             className="form-input"
                             placeholder="Enter your email"
+                            value={values.email}
+                            onChange={handleChange}
                         />
                    </div>
                    <div className="form-inputs">
@@ -40,6 +47,8 @@ function FormSignUp() {
                             name="password" 
                             className="form-input"
                             placeholder="Enter your password"
+                            value={values.password}
+                            onChange={handleChange}
                         />
                    </div>
                    <div className="form-inputs">
@@ -48,10 +57,12 @@ function FormSignUp() {
                         </label>
                         <input 
                             id="password2"
-                            type="password2" 
+                            type="password" 
                             name="password2" 
                             className="form-input"
                             placeholder="Enter your password2"
+                            value={values.password2}
+                            onChange={handleChange}
                         />
                    </div>
                    <button className="form-input-btn" type="submit">Sign Up</button>
@@ -64,4 +75,4 @@ function FormSignUp() {
     )
 }
 
-export default FormSignUp
+export default FormSignup;
