@@ -3,7 +3,7 @@ import useForm from './useForm';
 import validate from './validateInfo';
 
 function FormSignup() {
-    const { handleChange, values, handleSubmit } = useForm(validate);
+    const { handleChange, values, handleSubmit, errors } = useForm(validate);
 
     return (
         <div>
@@ -23,6 +23,7 @@ function FormSignup() {
                             value={values.username}
                             onChange={handleChange}
                         />
+                        {errors.username && <p>{errors.username}</p>}
                    </div>
                    <div className="form-inputs">
                         <label htlmFor="email" className="form-label">
@@ -37,6 +38,7 @@ function FormSignup() {
                             value={values.email}
                             onChange={handleChange}
                         />
+                        {errors.email && <p>{errors.email}</p>}
                    </div>
                    <div className="form-inputs">
                         <label htlmFor="password" className="form-label">
@@ -51,6 +53,7 @@ function FormSignup() {
                             value={values.password}
                             onChange={handleChange}
                         />
+                        {errors.password && <p>{errors.password}</p>}
                    </div>
                    <div className="form-inputs">
                         <label htlmFor="password2" className="form-label">
@@ -65,6 +68,7 @@ function FormSignup() {
                             value={values.password2}
                             onChange={handleChange}
                         />
+                        {errors.password2 && <p>{errors.password2}</p>}
                    </div>
                    <button className="form-input-btn" type="submit">Sign Up</button>
                    <span className="form-input-login">
